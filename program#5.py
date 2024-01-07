@@ -38,18 +38,20 @@ def find_largest_number():
 
 # for main window
 window = tk.Tk()
+window.geometry("370x280")
+window.config(background="lightblue")
 window.title("Find the Biggest Number")
 
 # for the input's widget
-entry1 = tk.Entry(window, width=10)
-entry2 = tk.Entry(window, width=10)
-entry3 = tk.Entry(window, width=10)
+entry1 = tk.Entry(window, width=20)
+entry2 = tk.Entry(window, width=20)
+entry3 = tk.Entry(window, width=20)
 
 # for labels
-label1 = tk.Label(window, text="First Number:")
-label2 = tk.Label(window, text="Second Number:")
-label3 = tk.Label(window, text="Third Number:")
-result_label = tk.Label(window, text="Result will be displayed here.")
+label1 = tk.Label(window, text="First Number:", font=('Arial', 15))
+label2 = tk.Label(window, text="Second Number:", font=('Arial', 15))
+label3 = tk.Label(window, text="Third Number:", font=('Arial', 15))
+result_label = tk.Label(window, text="Result will be displayed here.", font=('Arial', 14))
 
 # for the result botton
 calculate_button = tk.Button(window, text="Calculate", command=find_largest_number)
@@ -67,6 +69,14 @@ entry3.grid(row=2, column=1, pady=5)
 calculate_button.grid(row=3, column=0, columnspan=2, pady=10)
 result_label.grid(row=4, column=0, columnspan=2, pady=10)
 error_label.grid(row=5, column=0, columnspan=2, pady=10)
+
+
+
+
+
+
+
+window.eval('tk::PlaceWindow . center')
 
 # initiate main event loop
 window.mainloop()
